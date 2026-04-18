@@ -1,10 +1,14 @@
 # instabot-travis-ci
+[![Build Status](https://travis-ci.org/hendr15k/instabot-travis-ci.svg?branch=master)](https://travis-ci.org/hendr15k/instabot-travis-ci)
+
 Automate your Instabot with Travis-CI daily builds! For free.
+
+Runs on **Python 3.11** with pip cache for faster builds.
 
 ## Step-by-step
 
 1. Fork the repo
-2. Go to Travis-CI.org and login with GitHub
+2. Go to [Travis-CI.org](https://travis-ci.org) and login with GitHub
 3. Go to settings
 
 ![image](https://user-images.githubusercontent.com/5613295/63702442-a47a3000-c82f-11e9-8c21-0666bc01789b.png)
@@ -35,4 +39,3 @@ That's all folks! Happy hacking
 
 ----------
 *with love, [morejust](https://morejust.foundation)*
-
