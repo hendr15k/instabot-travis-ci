@@ -1,9 +1,31 @@
 language: python
-cache: 
-  - pip
+
+# Use modern Python — faster, better SSL, better Instabot compatibility
 python:
-  - "3.6"
-install: 
-  - pip install -r requirements.txt
+  - "3.11"
+
+# Cache pip downloads for speed
+cache:
+  pip: true
+
+# Cron job: run daily at 04:00 UTC
+# Travis will automatically push commits to this branch on schedule
+# if the repo is enabled in Travis CI settings with "Daily" or "Every day" trigger
+branches:
+  only:
+    - master
+
+# Install: upgrade pip first, then install dependencies with eager strategy
+# --prefer-binary avoids slow C-extension compilation
+install:
+  - pip install --upgrade pip
+  - pip install --prefer-binary --upgrade-strategy=eager -r requirements.txt
+
+# Run the bot; failure here means CI fails and the merge is skipped
 script:
   - python bot.py
+
+# Debug info after run — shows installed versions
+after_script:
+  - pip list
+  - pip show instabot | head -4
